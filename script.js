@@ -25,3 +25,8 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+const formStatus = document.querySelector('.form-status');
+if (formStatus && new URLSearchParams(window.location.search).get('sent') === '1') {
+  formStatus.hidden = false;
+}
